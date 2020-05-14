@@ -1,9 +1,3 @@
-/*
-  Wat doe je ook alweer in Javascript voor een micro-interactie?
-  1. Gebruik de querySelector om een element in je html te selecteren
-  2. Koppel een evenListener aan het element om een mouse-event te detecteren
-  3. Gebruik het Classlist object om een css class aan een element toe te voegen of weg te halen.
-*/
 
 //dit zijn de variabelen voor het maken van favorieten //
 
@@ -33,7 +27,8 @@ var unfavoMamaMia = document.querySelector("li.mamamiafavo");
 var buttonCaptainAmericaniet = document.querySelector("button.captainamericageen");
 var unfavoCaptainAmerica = document.querySelector("li.captainamericafavo");
 
-//dit zijn de acties voor het maken van een favoriet//
+//dit zijn de acties voor het maken van een favoriet, als je op de button van de films klikt die al te zien zijn, 
+// dan zorgt de class .yay ervoor dat de film in het onderste lijstje zichtbaar wordt.  //
 
 
 buttonIronMan.addEventListener("click", function() {
@@ -55,7 +50,8 @@ buttonCaptainAmerica.addEventListener("click", function() {
 });
 
 
-//dit zijn de acties voor het niet meer favoriet maken//
+//dit zijn de acties voor het niet meer favoriet maken, als je op de button van de favoriete film klikt, 
+// dan zorgt de class .yay ervoor dat de film niet meer zichtbaar wordt. //
 
 buttonIronManniet.addEventListener("click", function() {
     unfavoIronMan.classList.toggle("yay");

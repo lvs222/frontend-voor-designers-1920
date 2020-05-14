@@ -1,3 +1,5 @@
+/*algemene stijling*/
+
 * {
   box-sizing:border-box;
 }
@@ -35,14 +37,20 @@ h1{
     
 }
 
+/* dit is de stijling voor de films */
+
 ol li{
 display: inline-block;
 }
 
+/* dit zorgt ervoor dat de films niet zichtbaar zijn als de site wordt geopend.*/
 
 .ironmanfavo, .theproposalfavo, .mamamiafavo, .captainamericafavo{
     display: none;
 }
+
+
+/*dit is de class die actief wordt als er op de button geklikt wordt*/
 
 .yay{
     display: inline-block;
