@@ -9,7 +9,7 @@ body{
   max-width: 70em;
   margin: 1em auto;
   padding: 1em;
-  background: #fff;
+  background: #ffffff;
   border-radius: 0.5em;
   box-shadow: 0.5em 0.5em 0.5em rgba(68,68,68,0.6);
 }
@@ -25,13 +25,13 @@ h1, p, h2{
 
 h2{
     color: crimson;
+    padding: 0.5em;
 }
 
 h1{
-    border: solid;
     text-align: center;
     border-color: dimgrey;
-    padding: 1em;
+    padding: 0.5em;
     
 }
 
@@ -39,10 +39,18 @@ ol li{
 display: inline-block;
 }
 
-ol:last-child{
+
+.ironmanfavo, .theproposalfavo, .mamamiafavo, .captainamericafavo{
     display: none;
 }
 
-ol:last-child.yay{
+.yay{
     display: inline-block;
+}
+
+
+
+article{
+    display: inline-block;
+    
 }

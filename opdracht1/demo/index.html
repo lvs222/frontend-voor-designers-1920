@@ -1,48 +1,83 @@
 <html lang="nl">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Frontend voor Designer - Opdracht 1</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  </head>
+</head>
 
-  <body>
+<body>
     <main>
-      <h1>Opdracht 1 voor het vak Frontend voor Designers</h1>
-      <p>Case: In een verzameling films wil ik een aantal leuke films kunnen bewaren om ze later te bekijken.</p>
 
-    
-     <h2>Films</h2>
-    <ol>
-        <li><img src="img/18c4f43c690347ce49c14390c388d9bd.jpg" alt="Iron Man 3">
-        <button>Maak favoriet</button></li>
-        <li><img src="img/4ca6991efbc59290aea4d758237acfad.jpg" alt="The Proposal">
-        <button>Maak favoriet</button></li>
-        <li> <img src="img/c3d985f9713c39447c4738e763ff462a.jpg" alt="Mama Mia">
-        <button>Maak favoriet</button></li>
-        <li>   <img src="img/captainamerica2dvd.jpg" alt="Captain America">
-        <button>Maak favoriet</button></li>
-    </ol>
-    
-        <h2>Mijn favorieten</h2>
-        <ol>
-        <li><img src="img/18c4f43c690347ce49c14390c388d9bd.jpg" alt="Iron Man 3">
-        <button>Geen favoriet</button></li>
-        <li><img src="img/4ca6991efbc59290aea4d758237acfad.jpg" alt="The Proposal">
-        <button>Geen favoriet</button></li>
-        <li> <img src="img/c3d985f9713c39447c4738e763ff462a.jpg" alt="Mama Mia">
-        <button>Geen favoriet</button></li>
-        <li>   <img src="img/captainamerica2dvd.jpg" alt="Captain America">
-        <button>Geen favoriet</button></li>
-    </ol>
-    
+        <section>
+            <h1>Opdracht 1 voor het vak Frontend voor Designers</h1>
+            <p>Case: In een verzameling films wil ik een aantal leuke films kunnen bewaren om ze later te bekijken.</p>
+            <p>Door: Laura van Steveninck</p>
+        </section>
+
+        <section>
+
+            <h2>Films</h2>
+
+            <ol id="allefilms">
+
+                <article>
+
+                    <li><img src="img/18c4f43c690347ce49c14390c388d9bd.jpg" alt="Iron Man 3">
+                        <button class="ironman">Maak favoriet</button></li>
+
+                </article>
+
+                <article>
+
+                    <li><img src="img/4ca6991efbc59290aea4d758237acfad.jpg" alt="The Proposal">
+                        <button class="theproposal">Maak favoriet</button></li>
+
+                </article>
+
+                <article>
+
+                    <li> <img src="img/c3d985f9713c39447c4738e763ff462a.jpg" alt="Mama Mia">
+                        <button class="mamamia">Maak favoriet</button></li>
+
+                </article>
+
+                <article>
+
+                    <li> <img src="img/captainamerica2dvd.jpg" alt="Captain America">
+                        <button class="captainamerica">Maak favoriet</button></li>
+
+                </article>
+            </ol>
+
+        </section>
+
+        <section>
+
+            <h2>Mijn favorieten</h2>
+            <ol id="favorietefilms">
+                <li class="ironmanfavo"><img src="img/18c4f43c690347ce49c14390c388d9bd.jpg" alt="Iron Man 3">
+                    <button class="ironmangeen">Geen favoriet</button></li>
+
+                <li class="theproposalfavo"><img src="img/4ca6991efbc59290aea4d758237acfad.jpg" alt="The Proposal">
+                    <button class="theproposalgeen">Geen favoriet</button></li>
+
+                <li class="mamamiafavo"> <img src="img/c3d985f9713c39447c4738e763ff462a.jpg" alt="Mama Mia">
+                    <button class="mamamiageen">Geen favoriet</button></li>
+
+                <li class="captainamericafavo"> <img src="img/captainamerica2dvd.jpg" alt="Captain America">
+                    <button class="captainamericageen">Geen favoriet</button></li>
+            </ol>
+
+        </section>
+
 
     </main>
     <script src="js/script.js"> </script>
-  </body>
+</body>
+
+
+
 </html>
-
-
-
-
