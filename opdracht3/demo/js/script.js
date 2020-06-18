@@ -1,3 +1,4 @@
+//hier maak ik de variabelen aan die ik in de functies ga gebruiken.
 var header = document.querySelector('header');
 var section = document.querySelector('section');
 var buttonVideo = document.getElementById("buttonvideo");
@@ -5,32 +6,23 @@ var buttonPhoto = document.getElementById("buttonphoto");
 var showVideo = document.querySelector("div.videoelement");
 var hidePhoto = document.querySelector(".photo");
 
-buttonVideo.addEventListener("click", function() {
-//    showVideo.classList.toggle("showvideo");
-    
+
+//dit zijn de functies waarmee ik de tekst op de button laat veranderen, en waar ik de video en foto wel/niet laat zien. Dit gebeurt met een toggle
+buttonVideo.addEventListener("click", function () {
+
     buttonVideo.classList.toggle("remove");
-    
+
 });
 
-buttonPhoto.addEventListener("click", function(){
+buttonPhoto.addEventListener("click", function () {
     showVideo.classList.toggle("showvideo");
 
-   hidePhoto.classList.toggle("hidephoto");
-    
+    hidePhoto.classList.toggle("hidephoto");
+
     buttonPhoto.classList.toggle("remove");
-    });
+});
 
-//buttonVideo.addEventListener("click", function(){
-//    showVideo.classList.add("showvideo");
-//}
-//                            );
-//
-
-
-
-
-
-
+//het volgende stuk gaat over de json data 
 //variabele met de url naar de json data // 
 var requestURL = "https://www.scorebat.com/video-api/v1/";
 
@@ -51,13 +43,13 @@ request.onload = function () {
     var photos = request.response;
 
     // functies worden aangeroepen en de json data wordt er aan meegegeven 
-        showPhotos(photos);
+    showPhotos(photos);
 }
 
 function showPhotos(jsonObj) {
-    console.log("function showPhotos",jsonObj);
+    console.log("function showPhotos", jsonObj);
 
-    
+
     for (let i = 0; i < jsonObj.length; i++) {
 
         //html elementen aanmaken
@@ -66,14 +58,14 @@ function showPhotos(jsonObj) {
         var myPara1 = document.createElement('p');
         var myPara2 = document.createElement('p');
         var afbeelding = document.createElement('img');
-        
+
         myH2.textContent = jsonObj[i].title;
-        
+
         afbeelding.src = jsonObj[i].thumbnail;
-        
+
         myPara1.textContent = jsonObj[i].competition.name;
-        
-    
+
+
 
 
         //html elementen genest
@@ -87,5 +79,3 @@ function showPhotos(jsonObj) {
         section.appendChild(myArticle);
     }
 }
-
-
