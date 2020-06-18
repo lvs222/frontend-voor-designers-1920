@@ -1,5 +1,35 @@
 var header = document.querySelector('header');
 var section = document.querySelector('section');
+var buttonVideo = document.getElementById("buttonvideo");
+var buttonPhoto = document.getElementById("buttonphoto");
+var showVideo = document.querySelector("div.videoelement");
+var hidePhoto = document.querySelector(".photo");
+
+buttonVideo.addEventListener("click", function() {
+//    showVideo.classList.toggle("showvideo");
+    
+    buttonVideo.classList.toggle("remove");
+    
+});
+
+buttonPhoto.addEventListener("click", function(){
+    showVideo.classList.toggle("showvideo");
+
+   hidePhoto.classList.toggle("hidephoto");
+    
+    buttonPhoto.classList.toggle("remove");
+    });
+
+//buttonVideo.addEventListener("click", function(){
+//    showVideo.classList.add("showvideo");
+//}
+//                            );
+//
+
+
+
+
+
 
 //variabele met de url naar de json data // 
 var requestURL = "https://www.scorebat.com/video-api/v1/";
@@ -21,13 +51,10 @@ request.onload = function () {
     var photos = request.response;
 
     // functies worden aangeroepen en de json data wordt er aan meegegeven 
-    
-//    console.log(movies);
-    showPhotos(photos);
+        showPhotos(photos);
 }
 
 function showPhotos(jsonObj) {
-//    const heroes = jsonObj['members'];
     console.log("function showPhotos",jsonObj);
 
     
@@ -45,8 +72,8 @@ function showPhotos(jsonObj) {
         afbeelding.src = jsonObj[i].thumbnail;
         
         myPara1.textContent = jsonObj[i].competition.name;
-//        myPara2.textContent = jsonObj[i].side2.name;
-//        
+        
+    
 
 
         //html elementen genest
@@ -55,59 +82,9 @@ function showPhotos(jsonObj) {
         myArticle.appendChild(myPara2);
         myArticle.appendChild(afbeelding);
 
-
-
         //nieuwe elementen aan de section in de html toegevoegt// 
 
         section.appendChild(myArticle);
-    }
-}
-
-
-console.log("hallo");
-
-
-document.getElementById("next").addEventListener("click", function () {
-    photoSlide(1)
-});
-
-document.getElementById("previous").addEventListener("click", function () {
-    photoSlide(-1)
-});
-
-var slideIndex = 1;
-photo(slideIndex);
-
-function photoSlide(n) {
-    photo(slideIndex += n);
-}
-
-function currentPhoto(n) {
-    photo(slideIndex = n);
-}
-
-function photo(n) {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    if (n > x.length) {
-        slideIndex = 1
-    }
-    if (n < 1) {
-        slideIndex = x.length
-    }
-    for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-    }
-    x[slideIndex - 1].style.display = "block";
-}
-
-document.onkeydown = function (e) {
-    e = e || window.event;
-    if (e.keyCode == '37') {
-        photoSlide(-1)
-    } else if (e.keyCode == '39') {
-
-        photoSlide(1)
     }
 }
 

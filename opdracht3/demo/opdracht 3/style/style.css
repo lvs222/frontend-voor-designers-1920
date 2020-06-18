@@ -7,22 +7,24 @@
 
 html {
     font-family: 'roboto', helvetica, arial, sans-serif;
-    background-color: darkseagreen;
+    background-color: azure;
 }
 
 body {
     margin: 0 auto;
-    max-width: 90%;
-}
-
+    max-width: 90%;}
 /* header styles */
 
 h1,
 h2 {
-    font-size: 4rem;
+    font-size: 3rem;
     text-align: center;
 }
 
+
+h1{
+    border: dotted;    
+}
 header p {
     font-size: 1.3rem;
     font-weight: bold;
@@ -45,7 +47,6 @@ section {
     display: flex;
     align-items: center;
     /*    overflow: hidden*/
-
 }
 
 section article {
@@ -72,32 +73,29 @@ h2 {
 
 /*stijling buttons */
 
-#previous,
-#next {
+button {
     cursor: pointer;
     position: absolute;
     top: 20%;
     margin: 100px;
     width: auto;
     padding: 30px;
-    /*    margin-top: -22px;*/
     color: white;
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
-    /*    user-select: none;*/
     height: 10%;
     background-color: skyblue;
 }
 
-#previous {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+.remove{
+    opacity: 0;
 }
 
-#previous:hover,
-#next:hover {
+
+button:hover,
+    {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -118,4 +116,32 @@ p {
     font-family: Roboto;
     font-size: 20px;
     text-align: center;
+}
+
+.move {
+    margin-left: -30em;
+}
+
+.move2 {
+    margin-left: 50em;
+}
+
+
+
+.videoelement {
+    display: none;
+
+}
+
+
+.showvideo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    margin-left: 400px;
+}
+
+.hidephoto {
+    display: none;
 }
