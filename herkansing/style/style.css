@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+}
+
+
+/* || general styles */
+
+html {
+    font-family: 'roboto', helvetica, arial, sans-serif;
+    background-color: azure;
+}
+
+body {
+    margin: 0 auto;
+    max-width: 90%;}
+
+/* header styles */
+
+h1,
+h2 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+
+h1{
+    border: dotted;    
+}
+header p {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*stijling afbeeldingen*/
+
+img {
+
+/*    position: absolute;*/
+    width: 433px;
+    height: 338px;
+    left: 503px;
+    top: 234px;
+    overflow: hidden;
+}
+
+/* section styles */
+
+section {
+    display: flex;
+    align-items: center;
+    /*    overflow: hidden*/
+}
+
+section article {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/*
+section article + article {
+    display: none;
+}
+*/
+
+h2 {
+/*    position: absolute;*/
+    width: 433px;
+    height: 35px;
+    left: 503px;
+    top: 168px;
+    font-family: Roboto;
+    font-size: 30px;
+    text-align: center;
+}
+
+
+/*stijling buttons */
+
+#buttonvideo, #buttonphoto {
+    cursor: pointer;
+    position: absolute;
+    top: 20%;
+    margin: 100px;
+    width: auto;
+    padding: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    background-color: black;
+}
+
+button{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    margin: 100px;
+    width: auto;
+    padding: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    background-color: black;
+}
+}
+
+.remove{
+    opacity: 0;
+}
+
+
+#buttonvideo, #buttonphoto:hover {
+    background-color: coral;
+}
+
+div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+p {
+    width: 433px;
+    height: 35px;
+    left: 503px;
+    top: 603px;
+
+    font-family: Roboto;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+/*dit zijn de classes die de javascript gaat oproepen*/
+.move {
+    margin-left: -30em;
+}
+
+.move2 {
+    margin-left: 50em;
+}
+
+
+
+.videoelement {
+    display: none;
+
+}
+
+
+.showvideo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    margin-left: 400px;
+}
+
+.hidephoto {
+    display: none;
+}
