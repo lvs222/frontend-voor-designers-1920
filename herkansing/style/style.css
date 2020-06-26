@@ -7,7 +7,7 @@
 
 html {
     font-family: 'roboto', helvetica, arial, sans-serif;
-    background-color: azure;
+    background-color: white;
 }
 
 body {
@@ -24,52 +24,56 @@ h2 {
 
 
 h1{
-    border: dotted;    
+    background-color: darkblue;
+    color: white;
+    padding: 1rem;
 }
-header p {
-    font-size: 1.3rem;
-    font-weight: bold;
-    text-align: center;
+
+h2, p{
+    color: darkblue;
 }
 
 /*stijling afbeeldingen*/
 
-img {
 
-/*    position: absolute;*/
-    width: 433px;
-    height: 338px;
-    left: 503px;
-    top: 234px;
-    overflow: hidden;
-}
 
 /* section styles */
 
 section {
+    width: 100%;
+    height: 40rem;
     display: flex;
-    align-items: center;
-    /*    overflow: hidden*/
-}
-
-section article {
-    display: flex;
-    justify-content: center;
+    justify-content: space-between;
     overflow: hidden;
 }
 
-/*
-section article + article {
-    display: none;
+section article {
+    width: 30rem;
+    height: 40rem;
+    float: left;
+    padding: 25px;
+    margin-bottom: 60px;
+    background-color: ghostwhite;
 }
-*/
+
+section article img {
+    width: 25rem;
+    height: auto;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+section div {
+    width: 20rem;
+    height: 20rem;
+    float: left;
+    padding: 25px;
+    margin-bottom: 60px;
+}
 
 h2 {
-/*    position: absolute;*/
-    width: 433px;
-    height: 35px;
-    left: 503px;
-    top: 168px;
     font-family: Roboto;
     font-size: 30px;
     text-align: center;
@@ -78,44 +82,69 @@ h2 {
 
 /*stijling buttons */
 
-#buttonvideo, #buttonphoto {
-    cursor: pointer;
-    position: absolute;
-    top: 20%;
-    margin: 100px;
-    width: auto;
-    padding: 20px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    background-color: black;
+
+
+button {
+  font-family: basier_circlebold;
+  font-size: 1.3rem;
+  color: black;
+  background-color: white;
+  margin: 0 0.5rem;
+  width: 50px;
+  height: 50px;
+  border: 2px solid rgba(60, 60, 67, 0.214);
+  box-shadow: 0 5px 10px 0 rgba(0, 58, 150, 0.15);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
 }
 
-button{
+button:hover {
+  color: white;
+  background-color: rgba(41, 47, 54);
+  border: rgba(41, 47, 54);
+  box-shadow: 0 10px 18px 0 rgba(41, 47, 54, 0.3);
+  transition-delay: .5s;
+  -webkit-transition-delay: 0s;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/*navigatie buttons*/
+#verderButton {
+    background-color: #FFFFFF;
+    color: #808080;
+}
+
+#verderButton:hover {
+    background-color: #808080;
+    color: #ffffff;
     cursor: pointer;
-    position: absolute;
-    top: 50%;
-    margin: 100px;
-    width: auto;
-    padding: 20px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    background-color: black;
 }
+
+#terugButton {
+    background-color: #FFFFFF;
+    color: #808080;
 }
+
+#terugButton:hover {
+    background-color: #808080;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+
 
 .remove{
     opacity: 0;
 }
 
 
-#buttonvideo, #buttonphoto:hover {
-    background-color: coral;
+
 }
 
 div {
@@ -126,42 +155,19 @@ div {
 
 
 p {
-    width: 433px;
-    height: 35px;
-    left: 503px;
-    top: 603px;
-
     font-family: Roboto;
     font-size: 20px;
     text-align: center;
 }
 
 
-/*dit zijn de classes die de javascript gaat oproepen*/
-.move {
-    margin-left: -30em;
-}
-
-.move2 {
-    margin-left: 50em;
-}
 
 
-
-.videoelement {
-    display: none;
-
+img:hover {
+  box-shadow: 0 8px 16px 0 rgba(255, 255, 0);
+  transition-delay: .5s;
+  -webkit-transition-delay: 0s;
+  transform: scale(1.05);
 }
 
 
-.showvideo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 500px;
-    margin-left: 400px;
-}
-
-.hidephoto {
-    display: none;
-}
