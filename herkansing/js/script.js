@@ -1,11 +1,18 @@
-//hier maak ik de variabelen aan die ik in de functies ga gebruiken.
+//hier maak ik de variabelen aan die ik in de functies ga gebruiken 
 var header = document.querySelector('header');
 var section = document.querySelector('section');
 var selectAll = document.getElementById('selectAll');
 var count = 0;
 
-//het volgende stuk gaat over de json data 
-//variabele met de url naar de json data // 
+//variabelen voor de button show hightlights. 
+var footballButton = document.getElementById('footballButton');
+//als je op de button klikt wordt de functie showHighlights geactiveerd
+footballButton.addEventListener('click', showHighlights);
+
+//de functie om de json data te laten zien als er op de button wordt geklikt
+function showHighlights (jsonObj){
+    
+//variabele met de url naar de json data, link met json data wordt hier gemaakt // 
 var requestURL = "https://www.scorebat.com/video-api/v1/";
 
 //een xmlhttp request object aanmaken, nu kun je externe data laden. haalt de data op en herlaadt de data 
@@ -28,9 +35,11 @@ request.onload = function () {
     showPhotos(photos);
 }
 
+}
+
+//met deze functie maak ik alle elementen aan en koppel ik die aan de data van de json
 function showPhotos(jsonObj) {
     console.log("function showPhotos", jsonObj);
-
 
     for (let i = 0; i < 10; i++) {
 
@@ -40,19 +49,12 @@ function showPhotos(jsonObj) {
         var myPara1 = document.createElement('p');
         var myPara2 = document.createElement('p');
         var afbeelding = document.createElement('img');
-
-
-
+        
         myH2.textContent = jsonObj[i].title;
-
 
         afbeelding.src = jsonObj[i].thumbnail;
 
         myPara1.textContent = jsonObj[i].competition.name;
-
-        //        video.src = jsonObj[i].videos.embed;
-
-
 
         //html elementen genest
         myArticle.appendChild(myH2);
@@ -60,30 +62,22 @@ function showPhotos(jsonObj) {
         myArticle.appendChild(myPara2);
         myArticle.appendChild(afbeelding);
 
-
-
         //nieuwe elementen aan de section in de html toegevoegt// 
 
         selectAll.appendChild(myArticle);
 
     }
 
-
 }
 
 
 // werking van de carousel 
 
-// variabelen voor de  terug en verder button 
+// variabelen aanmaken voor de  terug en verder button, gekoppeld aan de id's in de html 
 var buttonTerug = document.querySelector('#terugButton');
 var buttonVerder = document.querySelector('#verderButton');
 
-
-// variabele voor de section waar de thumbnails inzitten
-//var footballCarousel = document.querySelector('section');
-
-
-// Buttons onclick
+// Wanneer je op de buttons klikt
 
 // event listeners toevoegen aan de terug en verder buttons
 buttonTerug.addEventListener('click', navigatieTerug);
@@ -91,11 +85,11 @@ buttonVerder.addEventListener('click', navigatieVerder);
 
 // functie voor wat er gebeurt als je op de terugButton klikt
 function navigatieTerug() {
-    
+    //hier zorg ik ervoor dat de functie de div in de html pakt die alle articles met highlights bevat
     var footballCarousel = document.getElementById('selectAll');
 
     count += 275;
-    // section met img transformeert elke keer +300 px
+    // section met img transformeert elke keer +275 px
     footballCarousel.style.transform = `translateX(${count}px)`;
 }
 
@@ -105,7 +99,7 @@ function navigatieVerder() {
         var footballCarousel = document.getElementById('selectAll');
 
     count -= 275;
-    // section met img transformeert elke keer -300 px
+    // section met img transformeert elke keer -275 px
     footballCarousel.style.transform = `translateX(${count}px)`;
 }
 
@@ -121,7 +115,7 @@ function pressTerug() {
 
     if (event.keyCode == 39) {
         count -= 275;
-        // section met img transformeert elke keer +300 px
+        // section met img transformeert elke keer +275 px
         footballCarousel.style.transform = `translateX(${count}px)`;
     }
 }
@@ -133,7 +127,7 @@ function pressVerder() {
 
     if (event.keyCode == 37) {
         count += 275;
-        // section met transformeert elke keer +300 px
+        // section met transformeert elke keer +275 px
         footballCarousel.style.transform = `translateX(${count}px)`;
     }
 }
