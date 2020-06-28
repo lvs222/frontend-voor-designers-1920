@@ -5,20 +5,20 @@
 
 /* || general styles */
 
-html {
+html, body {
     font-family: 'roboto', helvetica, arial, sans-serif;
     background-color: white;
+    margin: 0 auto;
+    max-width: 90%;
+    overflow-x: hidden;
 }
 
-body {
-    margin: 0 auto;
-    max-width: 90%;}
 
 /* header styles */
 
 h1,
 h2 {
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: center;
 }
 
@@ -33,21 +33,21 @@ h2, p{
     color: darkblue;
 }
 
-/*stijling afbeeldingen*/
-
 
 
 /* section styles */
 
 section {
-    width: 100%;
-    height: 40rem;
+    width: 300rem;
+    height: 30rem;
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
     overflow: hidden;
+
 }
 
-section article {
+ article {
     width: 30rem;
     height: 40rem;
     float: left;
@@ -56,7 +56,7 @@ section article {
     background-color: ghostwhite;
 }
 
-section article img {
+article img {
     width: 25rem;
     height: auto;
     margin-top: 20px;
@@ -65,17 +65,19 @@ section article img {
     cursor: pointer;
 }
 
-section div {
+/*
+.selectAll div {
     width: 20rem;
     height: 20rem;
     float: left;
     padding: 25px;
     margin-bottom: 60px;
 }
+*/
 
 h2 {
     font-family: Roboto;
-    font-size: 30px;
+    font-size: 1.5rem;
     text-align: center;
 }
 
@@ -139,11 +141,6 @@ button:hover {
 
 
 
-.remove{
-    opacity: 0;
-}
-
-
 
 }
 
@@ -156,7 +153,7 @@ div {
 
 p {
     font-family: Roboto;
-    font-size: 20px;
+    font-size: 1rem;
     text-align: center;
 }
 

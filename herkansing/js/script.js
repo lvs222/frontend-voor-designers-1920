@@ -1,9 +1,8 @@
 //hier maak ik de variabelen aan die ik in de functies ga gebruiken.
 var header = document.querySelector('header');
 var section = document.querySelector('section');
+var selectAll = document.getElementById('selectAll');
 var count = 0;
-
-
 
 //het volgende stuk gaat over de json data 
 //variabele met de url naar de json data // 
@@ -30,19 +29,18 @@ request.onload = function () {
 }
 
 function showPhotos(jsonObj) {
-        console.log("function showPhotos", jsonObj);
+    console.log("function showPhotos", jsonObj);
 
-  
+
     for (let i = 0; i < 10; i++) {
 
         //html elementen aanmaken
-        var myArticle = document.createElement('article');
+        var myArticle = document.createElement('article');        
         var myH2 = document.createElement('h2');
         var myPara1 = document.createElement('p');
         var myPara2 = document.createElement('p');
         var afbeelding = document.createElement('img');
-//        var video = document.createElement('video');
-        
+
 
 
         myH2.textContent = jsonObj[i].title;
@@ -51,8 +49,8 @@ function showPhotos(jsonObj) {
         afbeelding.src = jsonObj[i].thumbnail;
 
         myPara1.textContent = jsonObj[i].competition.name;
-        
-//        video.src = jsonObj[i].videos.embed;
+
+        //        video.src = jsonObj[i].videos.embed;
 
 
 
@@ -61,14 +59,13 @@ function showPhotos(jsonObj) {
         myArticle.appendChild(myPara1);
         myArticle.appendChild(myPara2);
         myArticle.appendChild(afbeelding);
-//        myArticle.appendChild(video);
-        
-        
+
+
 
         //nieuwe elementen aan de section in de html toegevoegt// 
 
-        section.appendChild(myArticle);
-        
+        selectAll.appendChild(myArticle);
+
     }
 
 
@@ -81,8 +78,10 @@ function showPhotos(jsonObj) {
 var buttonTerug = document.querySelector('#terugButton');
 var buttonVerder = document.querySelector('#verderButton');
 
+
 // variabele voor de section waar de thumbnails inzitten
-var footballCarousel = document.querySelector('section');
+//var footballCarousel = document.querySelector('section');
+
 
 // Buttons onclick
 
@@ -92,14 +91,20 @@ buttonVerder.addEventListener('click', navigatieVerder);
 
 // functie voor wat er gebeurt als je op de terugButton klikt
 function navigatieTerug() {
-    count += 300;
+    
+    var footballCarousel = document.getElementById('selectAll');
+
+    count += 275;
     // section met img transformeert elke keer +300 px
     footballCarousel.style.transform = `translateX(${count}px)`;
 }
 
 // functie voor wat er gebeurt als je op de verderButton klikt
 function navigatieVerder() {
-    count -= 300;
+    
+        var footballCarousel = document.getElementById('selectAll');
+
+    count -= 275;
     // section met img transformeert elke keer -300 px
     footballCarousel.style.transform = `translateX(${count}px)`;
 }
@@ -111,8 +116,11 @@ document.addEventListener('keydown', pressVerder);
 
 // functie aanmaken voor wat er gebeurt als je op de > knop op je toetsenbord drukt
 function pressTerug() {
+    
+            var footballCarousel = document.getElementById('selectAll');
+
     if (event.keyCode == 39) {
-        count -= 300;
+        count -= 275;
         // section met img transformeert elke keer +300 px
         footballCarousel.style.transform = `translateX(${count}px)`;
     }
@@ -120,11 +128,13 @@ function pressTerug() {
 
 // functie aanmaken voor wat er gebeurt als je op de < knop op je toetsenbord drukt
 function pressVerder() {
+    
+            var footballCarousel = document.getElementById('selectAll');
+
     if (event.keyCode == 37) {
-        count += 300;
+        count += 275;
         // section met transformeert elke keer +300 px
         footballCarousel.style.transform = `translateX(${count}px)`;
     }
 }
-
 
